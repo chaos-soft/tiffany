@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="tac">
+        {% for article in articles[:1] %}
+            <div class="mb"><a><img src="{{ article.get_image() }}"></a></div>
+        {% endfor %}
+    </div>
+
+    <div id="products" class="mb ml mr">
+        {% for article in articles[1:] %}
+            <a style="background-image: url('{{ article.get_image() }}')"></a>
+        {% endfor %}
+    </div>
+{% endblock %}

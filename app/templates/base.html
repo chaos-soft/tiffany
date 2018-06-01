@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8">
+        <title>{% block title %}{% endblock %}</title>
+        <meta name="description" content="{% block description %}{% endblock %}">
+        <meta name="keywords" content="{% block keywords %}{% endblock %}">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/static/style.css">
+        <script src="/static/init.js"></script>
+        {% block head %}{% endblock %}
+    </head>
+    <body>
+        <header>
+            <a id="menu"><i class="material-icons">menu</i></a>
+
+            <ul class="center">
+                {% block header %}
+                    <li><a href="/">Диван</a></li>
+                    <li><a>Кровать</a></li>
+                    <li><a>Three</a></li>
+                    <li><a>Четыре</a></li>
+                    <li><a>Корзина</a></li>
+                {% endblock %}
+            </ul>
+        </header>
+
+        <div id="content">
+            {% block content %}{% endblock %}
+        </div>
+
+        <footer>
+            {% block footer %}
+                <div class="center">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</div>
+            {% endblock %}
+        </footer>
+    </body>
+</html>

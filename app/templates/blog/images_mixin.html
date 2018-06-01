@@ -1,0 +1,16 @@
+<div id="images">
+    {% for image in images -%}
+        {% if image.id in images_ids -%}
+            <a href="{{ url_for('static', filename=image.image) }}" data-id="{{ image.id }}"><img src="{{ image.get_thumbnail() }}" title="{{ image }}" class="active"></a>
+        {%- else -%}
+            <a href="{{ url_for('static', filename=image.image) }}" data-id="{{ image.id }}"><img src="{{ image.get_thumbnail() }}" title="{{ image }}"></a>
+        {%- endif %}
+    {%- else -%}
+        <p>Нет картинок.</p>
+    {%- endfor %}
+</div>
+
+
+<script>
+    window.formName = '{{ form_name }}'
+</script>

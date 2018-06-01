@@ -1,0 +1,260 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans&subset=cyrillic');
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* https://meyerweb.com/eric/tools/css/reset/ */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video, input, textarea {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: 0;
+}
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, iframe {
+    display: block;
+}
+body {
+    line-height: 1;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+.mt {
+    margin-top: 10px;
+}
+.mb {
+    margin-bottom: 10px;
+}
+.ml {
+    margin-left: 10px;
+}
+.mr {
+    margin-right: 10px;
+}
+.tac {
+    text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+a, input[type='submit'] {
+    cursor: pointer;
+}
+header, input[type='submit'] {
+    background: rgba(8, 18, 48, .8);
+}
+header, #form_article > span {
+    top: 0;
+}
+header, input[type='text'] {
+    width: 100%;
+}
+header a:hover, input[type='submit'] {
+    color: white;
+}
+header a, footer {
+    color: rgba(255, 255, 255, .8);
+}
+header a, #form_article > span > a {
+    transition: color 200ms;
+}
+header > ul, #images {
+    text-align: center;
+}
+input[type='text'], input[type='submit'], #images > a > img {
+    border-radius: 3px;
+}
+input[type='text'], input[type='submit'] {
+    line-height: 1.6rem;
+}
+p, h1 {
+    margin: 20px 0;
+}
+p, footer {
+    line-height: 1.2rem;
+}
+
+* {
+    outline: none;
+    box-sizing: border-box;
+}
+a {
+    text-decoration: none;
+}
+body {
+    font: .9rem/1 'Open Sans', sans-serif;
+    background: rgba(8, 18, 48, .08);
+}
+footer {
+    background: rgba(8, 18, 48, .6);
+    padding: 20px 10px;
+    text-align: justify;
+}
+header {
+    height: 50px;
+    line-height: 50px;
+    position: fixed;
+    left: 0;
+}
+header a {
+    padding: 0 10px;
+}
+h1 {
+    font-size: 1.2rem;
+}
+img {
+    vertical-align: middle;
+    max-width: 100%;
+}
+input[type='text'] {
+    padding: 0 4px;
+}
+input[type='submit'] {
+    padding: 0 20px;
+    transition: background-color 200ms;
+}
+input[type='submit']:disabled {
+    background: rgba(8, 18, 48, .2);
+    cursor: auto;
+}
+label {
+    display: inline-block;
+    padding-bottom: 2px;
+}
+
+.material-icons {
+    vertical-align: text-bottom;
+}
+
+#content {
+    margin-top: 60px;
+}
+#content2 {
+    margin-top: 90px;
+    margin-bottom: 40px;
+}
+#form_article {
+    position: relative;
+}
+#form_article > span {
+    position: absolute;
+    right: 0;
+}
+#form_article > span > a {
+    color: rgba(8, 18, 48, .6);
+}
+#form_article > span > a:hover {
+    color: rgba(8, 18, 48, .8);
+}
+#images > a > img {
+    border: 4px solid rgba(8, 18, 48, .2);
+    padding: 2px;
+    max-height: 172px;
+    transition: border 200ms;
+    margin: 0 5px 10px;
+}
+#images > a > img.active {
+    border-color: #298fe4;
+}
+#products {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px;
+}
+#products > a {
+    transition: box-shadow 200ms;
+    background-size: cover;
+    background-position: center;
+    height: 220px;
+}
+#products > a:hover {
+    box-shadow: 0 5px 10px 0px rgba(8, 18, 48, .5);
+}
+
+@media (max-width: 959px) {
+    header > ul {
+        position: relative;
+        left: -100%;
+        transition: left 200ms;
+        background: rgba(8, 18, 48, .8);
+    }
+    header > ul.active {
+        left: 0;
+    }
+    header > ul > li {
+        border-top: 1px solid rgba(255, 255, 255, .2);
+    }
+}
+
+@media (min-width: 960px) {
+    header > ul {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+    }
+    header > a {
+        display: none;
+    }
+
+    .center {
+        max-width: 940px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    #products {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}

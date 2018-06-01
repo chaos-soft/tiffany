@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block title %}{{ title }}{% endblock %}
+{% block header %}{% include header_include ignore missing %}{% endblock %}
+{% block content %}
+    <div class="ml mr" id="content2">
+        <article class="center" id="form_article">
+            <h1>{{ title }}</h1>
+
+            {% include menu_include ignore missing %}
+
+            <form action="{{ form_action }}" method="post" enctype="multipart/form-data" id="form">
+                {% for field in form %}
+                    {% if field.type == "CSRFTokenField" or field.type == "HiddenField" or field.type == "FileField" %}
+                        {{ field }}
+                    {% elif field.type == "SubmitField" %}
+                    {% else %}
+                        <p>
+                            {{ field.label }}
+                            {{ field }}
+                        </p>
+                    {% endif %}
+                {% endfor %}
+
+                {% include form_include ignore missing %}
+
+                <p>{{ form.submit }}</p>
+            </form>
+        </article>
+    </div>
+{% endblock %}
